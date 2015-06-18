@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.9.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+ and ASL 2.0
 # All MIT except for:
@@ -79,6 +79,9 @@ chmod a+x %{buildroot}%{python_sitelib}/libqtile/widget/sensors.py
 
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Sun Feb 22 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.9.1-2
 - Final update to licensing
 
