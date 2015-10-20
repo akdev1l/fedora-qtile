@@ -1,6 +1,6 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
-Version: 0.10.1
+Version: 0.10.2
 Release: 1%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+ and ASL 2.0
@@ -11,7 +11,6 @@ BuildArch: noarch
 Url: http://qtile.org
 
 Source1:  qtile.desktop
-Patch40:  fix-soname.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -20,6 +19,7 @@ BuildRequires:  python3-nose-cov
 BuildRequires:  python3-xcffib
 BuildRequires:  python3-trollius
 BuildRequires:  python3-cairocffi
+BuildRequires:  cairo
 BuildRequires:  python3-six
 BuildRequires:  python3-pycparser
 
@@ -27,6 +27,8 @@ Requires:  python3-cairocffi
 Requires:  python3-cffi
 Requires:  python3-xcffib
 Requires:  python3-trollius
+# python3-cairocffi is not currently pulling in cairo
+Requires:  cairo
 
 %description
 
@@ -48,7 +50,6 @@ Features
 
 %prep
 %setup -q -n qtile-%{version} 
-%patch40 -p1
 
 %build
 %{__python3} setup.py build
@@ -79,6 +80,9 @@ chmod a+x %{buildroot}%{python3_sitelib}/libqtile/widget/sensors.py
 
 
 %changelog
+* Tue Oct 20 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.10.2-1
+- Update to latest upstream
+
 * Mon Oct 19 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.10.1-1
 - Fix soname issue
 
