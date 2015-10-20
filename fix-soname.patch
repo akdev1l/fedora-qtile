@@ -1,0 +1,34 @@
+From b7addd98ccfb462b6155b346e89790db3d614534 Mon Sep 17 00:00:00 2001
+From: Tycho Andersen <tycho@tycho.ws>
+Date: Sat, 8 Aug 2015 12:47:02 -0400
+Subject: [PATCH] use the .0 soname
+
+On rpm and deb based distros, these libraries (symlinks) are provided by
+the -dev version of the packages, where the .0 name is provided by the
+actual library package. Let's use the .0 name instead so we don't have an
+undocumented dependency on -dev packages.
+
+Closes #734
+
+Signed-off-by: Tycho Andersen <tycho@tycho.ws>
+---
+ libqtile/pangocffi.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/libqtile/pangocffi.py b/libqtile/pangocffi.py
+index e338c37..5542a88 100644
+--- a/libqtile/pangocffi.py
++++ b/libqtile/pangocffi.py
+@@ -54,9 +54,9 @@
+ except ImportError:
+     from libqtile.ffi_build import pango_ffi as ffi
+ 
+-gobject = ffi.dlopen('libgobject-2.0.so')
+-pango = ffi.dlopen('libpango-1.0.so')
+-pangocairo = ffi.dlopen('libpangocairo-1.0.so')
++gobject = ffi.dlopen('libgobject-2.0.so.0')
++pango = ffi.dlopen('libpango-1.0.so.0')
++pangocairo = ffi.dlopen('libpangocairo-1.0.so.0')
+ 
+ 
+ def CairoContext(cairo_t):

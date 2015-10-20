@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.10.1
-Release: 0%{?dist}
+Release: 1%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+ and ASL 2.0
 # All MIT except for:
@@ -11,6 +11,7 @@ BuildArch: noarch
 Url: http://qtile.org
 
 Source1:  qtile.desktop
+Patch40:  fix-soname.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -47,6 +48,7 @@ Features
 
 %prep
 %setup -q -n qtile-%{version} 
+%patch40 -p1
 
 %build
 %{__python3} setup.py build
@@ -77,6 +79,9 @@ chmod a+x %{buildroot}%{python3_sitelib}/libqtile/widget/sensors.py
 
 
 %changelog
+* Mon Oct 19 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.10.1-1
+- Fix soname issue
+
 * Mon Aug 03 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.10.1-0
 - Update to latest upstream
 
