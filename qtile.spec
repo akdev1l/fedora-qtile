@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.10.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+ and ASL 2.0
 # All MIT except for:
@@ -74,12 +74,16 @@ chmod a+x %{buildroot}%{python3_sitelib}/libqtile/widget/sensors.py
 %{_bindir}/qtile
 %{_bindir}/qtile-run
 %{_bindir}/qtile-session
+%{_bindir}/qtile-top
 %{python3_sitelib}/qtile-%{version}-py%{python3_version}.egg-info
 %{python3_sitelib}/libqtile
 %{_datadir}/xsessions/qtile.desktop
 
 
 %changelog
+* Tue Oct 20 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.10.2-2
+- /usr/bin/qtile-top to files list
+
 * Tue Oct 20 2015 John Dulaney <jdulaney@fedoraproject.org> - 0.10.2-1
 - Update to latest upstream
 
