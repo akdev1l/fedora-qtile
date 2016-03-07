@@ -69,7 +69,6 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 %{_bindir}/qsh
 %{_bindir}/qtile
 %{_bindir}/qtile-run
-%{_bindir}/qtile-session
 %{_bindir}/qtile-top
 %{python3_sitelib}/qtile-%{version}-py%{python3_version}.egg-info
 %{python3_sitelib}/libqtile
