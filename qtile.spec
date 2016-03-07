@@ -67,6 +67,7 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 %{_mandir}/man1/qsh.1*
 %{_mandir}/man1/qtile.1*
 %{_bindir}/qsh
+%{_bindir}/iqsh
 %{_bindir}/qtile
 %{_bindir}/qtile-run
 %{_bindir}/qtile-top
