@@ -1,12 +1,11 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
-Version: 0.10.5
+Version: 0.10.6
 Release: 1%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
-License: MIT and GPLv3+ and ASL 2.0
+License: MIT and GPLv3+
 # All MIT except for:
 # libqtile/widget/pacman.py:GPL (v3 or later)
-# libqtile/widget/google_calendar.py:Apache (v2.0)
 BuildArch: noarch
 Url: http://qtile.org
 
@@ -64,10 +63,10 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 %files
 %license LICENSE
 %doc README.rst
-%{_mandir}/man1/qsh.1*
+%{_mandir}/man1/qshell.1*
 %{_mandir}/man1/qtile.1*
-%{_bindir}/qsh
-%{_bindir}/iqsh
+%{_bindir}/qshell
+%{_bindir}/iqshell
 %{_bindir}/qtile
 %{_bindir}/qtile-run
 %{_bindir}/qtile-top
@@ -77,6 +76,11 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Wed May 25 2016 John Dulaney <jdulaney@fedoraproject.org> - 0.10.6-1
+- Add `startup_complete` hook
+- Restore dynamic groups on restart
+- Major bug fixes with floating window handling
+
 * Fri Mar 04 2016 John Dulaney <jdulaney@fedoraproject.org> - 0.10.5-1
 - Python 3.2 support dropped !!!
 - GoogleCalendar widget dropped for KhalCalendar widget !!!
