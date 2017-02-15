@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
-Version: 0.10.6
-Release: 4%{?dist}
+Version: 0.10.7
+Release: 1%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -76,6 +76,16 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Tue Feb 14 2017 John Dulaney <jdulaney@fedoraproject.org> - 0.10.7-1
+- new MPD widget, widget.MPD2, based on `mpd2` library
+- add option to ignore duplicates in prompt widget
+- add additional margin options to GroupBox widget
+- add option to ignore mouse wheel to GroupBox widget
+- add `watts` formatting string option to Battery widgets
+- add volume commands to Volume widget
+- add Window.focus command
+
+
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.10.6-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
