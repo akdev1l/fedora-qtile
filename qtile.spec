@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.11.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -70,12 +70,17 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 %{_bindir}/qtile
 %{_bindir}/qtile-run
 %{_bindir}/qtile-top
+%{_bindir}/dqcmd
+%{_bindir}/qcmd
 %{python3_sitelib}/qtile-%{version}-py%{python3_version}.egg-info
 %{python3_sitelib}/libqtile
 %{_datadir}/xsessions/qtile.desktop
 
 
 %changelog
+* Fri Mar 28 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.1-2
+- Add unpackaged files %#{_bindir}/dqcmd %#{_bindir}/qcmd
+
 * Wed Feb 28 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.1-1
 - !!! Completely changed extension configuration, see the documentation !!!
 - !!! `extention` subpackage renamed to `extension` !!!
