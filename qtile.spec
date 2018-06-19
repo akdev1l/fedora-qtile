@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.11.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -78,6 +78,9 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Tue Jun 19 2018 Miro Hrončok <mhroncok@redhat.com> - 0.11.1-3
+- Rebuilt for Python 3.7
+
 * Fri Mar 28 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.1-2
 - Add unpackaged files %#{_bindir}/dqcmd %#{_bindir}/qcmd
 
