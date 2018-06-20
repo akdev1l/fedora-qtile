@@ -16,7 +16,6 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-cffi
 BuildRequires:  python3-nose-cov
 BuildRequires:  python3-xcffib
-BuildRequires:  python3-trollius
 BuildRequires:  python3-cairocffi
 BuildRequires:  cairo
 BuildRequires:  python3-six
@@ -25,7 +24,6 @@ BuildRequires:  python3-pycparser
 Requires:  python3-cairocffi
 Requires:  python3-cffi
 Requires:  python3-xcffib
-Requires:  python3-trollius
 # python3-cairocffi is not currently pulling in cairo
 Requires:  cairo
 
@@ -80,6 +78,7 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 %changelog
 * Tue Jun 19 2018 Miro Hrončok <mhroncok@redhat.com> - 0.11.1-3
 - Rebuilt for Python 3.7
+- Don't require trollius (only needed on Python < 3.4)
 
 * Fri Mar 28 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.1-2
 - Add unpackaged files %#{_bindir}/dqcmd %#{_bindir}/qcmd
