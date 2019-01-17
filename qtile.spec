@@ -1,6 +1,6 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
-Version: 0.12.0
+Version: 0.13.0
 Release: 1%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
@@ -76,6 +76,25 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Thu Jan 17 2019 Mairi Dulaney <jdulaney@fedoraproject.org> - 0.13.0-1
+- !!! deprecation warning !!!
+-   wmii layout is deprecated in terms of columns layout, which has the
+-   same behavior with different defaults, see the wmii definition for
+-   more details
+- * features
+-   add svg handling for images
+-   allow addgroup command to set the layout
+-   add command to get current log level
+-   allow groupbox to hide unused groups
+-   add caps lock indicator widget
+-   add custom_command to check_update widget
+- * bugfixes
+-   better shutdown handling
+-   fix clientlist current client tracking
+-   fix typo in up command on ratiotile layout
+-   various fixes to check_update widget
+-   fix 0 case for resize screen
+
 * Wed Jul 18 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.12.0-1
 - !!! Config breakage !!!
 -   Tile layout commands up/down/shuffle_up/shuffle_down changed to be
