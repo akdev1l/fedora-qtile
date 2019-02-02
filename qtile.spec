@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.13.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -76,6 +76,9 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.13.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Thu Jan 17 2019 Mairi Dulaney <jdulaney@fedoraproject.org> - 0.13.0-1
 - !!! deprecation warning !!!
 -   wmii layout is deprecated in terms of columns layout, which has the
