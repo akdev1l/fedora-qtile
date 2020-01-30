@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.13.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -76,6 +76,9 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.13.0-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Thu Oct 03 2019 Miro Hrončok <mhroncok@redhat.com> - 0.13.0-5
 - Rebuilt for Python 3.8.0rc1 (#1748018)
 
