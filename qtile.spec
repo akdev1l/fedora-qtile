@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
-Version: 0.13.0
-Release: 6%{?dist}
+Version: 0.14.2
+Release: 1%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -14,7 +14,6 @@ Source1:  qtile.desktop
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-cffi
-BuildRequires:  python3-nose-cov
 BuildRequires:  python3-xcffib
 BuildRequires:  python3-cairocffi
 BuildRequires:  cairo
@@ -76,6 +75,10 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Mon Feb 03 2020 Mairi Dulaney <jdulaney@fedoraproject.org> - 0.14.2-1
+- Update to latest release
+- Remove buildrequires python-nose-cov
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.13.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
