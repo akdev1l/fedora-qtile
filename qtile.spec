@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
 Version: 0.14.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -75,6 +75,9 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
+* Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 0.14.2-2
+- Rebuilt for Python 3.9
+
 * Mon Feb 03 2020 Mairi Dulaney <jdulaney@fedoraproject.org> - 0.14.2-1
 - Update to latest release
 - Remove buildrequires python-nose-cov
