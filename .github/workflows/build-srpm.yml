@@ -1,0 +1,23 @@
+name: build QTile src rpm
+on:
+  push:
+    branches:
+      - rawhide
+
+jobs:
+  build-srpm:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - name: install build dependencies
+        run: dnf install -y fedpkg
+      - name: check out repository code
+        uses: actions/checkout@v2
+      - name: build srpm
+        run: |
+          curl -LOJ "https://files.pythonhosted.org/packages/source/q/qtile/qtile-0.19.0.tar.gz"
+          fedpkg srpm
+      - uses: actions/upload-artifact@v2
+        with:
+          name: qtile-0.19.0-srpm
+          path: qtile-0.19.0-5.fc36.src.rpm
